@@ -1,7 +1,7 @@
 import React from "react";
 import { BsCheckLg, BsXLg, BsArrowCounterclockwise } from "react-icons/bs";
 
-function TodoItem({ id, item, onCheck }) {
+function TodoItem({ id, item, onCheck, onRemove, onUndo }) {
   return (
     <li>
       <div
@@ -9,9 +9,11 @@ function TodoItem({ id, item, onCheck }) {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
+          wordWrap: "break-word",
+          textDecorationLine: item.status ? "line-through" : "",
         }}
       >
-        {item}
+        {item.task}
         <div>
           <BsCheckLg
             style={{ color: "#2a9d8f", marginLeft: 10 }}
@@ -22,13 +24,13 @@ function TodoItem({ id, item, onCheck }) {
           <BsXLg
             style={{ color: "#e63946", marginLeft: 10 }}
             onClick={() => {
-              onCheck(id);
+              onRemove(id);
             }}
           />
           <BsArrowCounterclockwise
             style={{ color: "#ffb703", marginLeft: 10 }}
             onClick={() => {
-              onCheck(id);
+              onUndo(id);
             }}
           />
         </div>
