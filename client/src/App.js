@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TodoList, Loader } from "./components";
+import { TodoList, LoaderOverlay } from "./components";
 import axios from "./utils/axios";
 import "./App.css";
 
@@ -32,7 +32,7 @@ function App() {
   return (
     <div style={{ display: "flex", flex: 1, position: "relative" }}>
       <TodoList />
-      {isLoading && <Loader />}
+      {isLoading && <LoaderOverlay />}
     </div>
   );
 }

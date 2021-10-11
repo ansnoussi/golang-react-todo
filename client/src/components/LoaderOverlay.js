@@ -1,6 +1,7 @@
 import React from "react";
+import Loader from "react-loader-spinner";
 
-export default function Loader() {
+export default function LoaderOverlay() {
   return (
     <div
       style={{
@@ -26,9 +27,7 @@ export default function Loader() {
           justifyContent: "center",
         }}
       >
-        <p style={{ color: "#BE9B00" }} size={80}>
-          loading
-        </p>
+        <Loader type="ThreeDots" color="#ffeaa7" height="100" width="100" />
       </div>
     </div>
   );
