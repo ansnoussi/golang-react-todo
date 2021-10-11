@@ -1,16 +1,49 @@
+import React, { useState } from "react";
+import { TodoItem } from "./components";
 import "./App.css";
-import { ToDoList } from "./components";
 
 function App() {
+  const app_env = window.REACT_APP_ENVIRONMENT;
+
+  const [input, setInput] = useState("");
+  const [items, setItems] = useState([]);
+
+  function addItem(event) {
+    setItems((prevData) => {
+      return [...prevData, input];
+    });
+    setInput("");
+  }
+
+  function removeItem(id) {
+    setItems((prevData) => {
+      return prevData.filter((item, index) => {
+        return index !== id;
+      });
+    });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          <b>{window.REACT_APP_ENVIRONMENT}</b>
-        </p>
-      </header>
-      <div className="App-body">
-        <ToDoList />
+    <div className="todolist">
+      <div className="heading">
+        <h1>To-Do List</h1>
+        <p>{app_env}</p>
+      </div>
+      <input
+        type="text"
+        value={input}
+        onChange={(event) => {
+          setInput(event.target.value);
+        }}
+      />
+      <button onClick={addItem}>Add</button>
+
+      <div className="items">
+        <ul>
+          {items.map((item, index) => (
+            <TodoItem key={index} id={index} item={item} onCheck={removeItem} />
+          ))}
+        </ul>
       </div>
     </div>
   );
