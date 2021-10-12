@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { TodoList, LoaderOverlay } from "./components";
-import axios from "./utils/axios";
-import "./App.css";
+import { TodoList, LoaderOverlay } from "../components";
+import axios from "../utils/axios";
 
-function App() {
+export default function Home() {
   const [isLoading, setLoading] = useState(false);
 
   axios.interceptors.request.use(
@@ -24,7 +23,6 @@ function App() {
     },
     (error) => {
       setLoading(false);
-      if (error.response?.status === 419) window.location.reload();
       return Promise.reject(error);
     }
   );
@@ -36,5 +34,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

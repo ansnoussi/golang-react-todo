@@ -16,7 +16,7 @@ body {
   margin: 50px auto;
   padding: 16px;
   min-height: 580px;
-  max-width: 300px;
+  max-width: 400px;
   background-color: #f1f5f8;
   background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
   background-size: 40px 40px;
@@ -59,7 +59,6 @@ body {
   border: 0;
   border-bottom: 3px dashed #fdcb6e;
   background-color: transparent;
-  font-family: "Architects Daughter", sans-serif;
   font-size: 1.3rem;
   padding: 10px 15px;
   width: 70%;
@@ -71,7 +70,6 @@ body {
   border: 3px solid hsl(198, 1%, 29%);
   border-radius: 8px;
   padding: 10px 15px;
-  font-family: "Architects Daughter", sans-serif;
   font-size: 0.9rem;
 }
 

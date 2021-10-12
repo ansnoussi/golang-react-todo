@@ -3,7 +3,8 @@ import TodoItem from "./TodoItem";
 import axios from "../utils/axios";
 
 function TodoList() {
-  const app_env = window.REACT_APP_ENVIRONMENT;
+  // const app_env = window.REACT_APP_ENVIRONMENT;
+  const app_env = "LOCAL";
 
   const [input, setInput] = useState("");
   const [items, setItems] = useState([]);
