@@ -4,6 +4,7 @@ import Loader from "react-loader-spinner";
 export default function LoaderOverlay() {
   return (
     <div
+      data-testid="loader-overlay"
       style={{
         position: "absolute",
         height: "100vh",

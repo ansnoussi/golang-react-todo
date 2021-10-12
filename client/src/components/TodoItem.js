@@ -1,10 +1,11 @@
 import React from "react";
 import { BsCheckLg, BsXLg, BsArrowCounterclockwise } from "react-icons/bs";
 
-function TodoItem({ id, item, onCheck, onRemove, onUndo }) {
+function TodoItem({ item, onCheck, onRemove, onUndo }) {
   return (
     <li>
       <div
+        data-testid="todo-item"
         style={{
           display: "flex",
           flexDirection: "row",
@@ -18,19 +19,19 @@ function TodoItem({ id, item, onCheck, onRemove, onUndo }) {
           <BsCheckLg
             style={{ color: "#2a9d8f", marginLeft: 10 }}
             onClick={() => {
-              onCheck(id);
+              onCheck(item._id);
             }}
           />
           <BsXLg
             style={{ color: "#e63946", marginLeft: 10 }}
             onClick={() => {
-              onRemove(id);
+              onRemove(item._id);
             }}
           />
           <BsArrowCounterclockwise
             style={{ color: "#ffb703", marginLeft: 10 }}
             onClick={() => {
-              onUndo(id);
+              onUndo(item._id);
             }}
           />
         </div>

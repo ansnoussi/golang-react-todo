@@ -119,7 +119,6 @@ function TodoList() {
           {items.map((item) => (
             <TodoItem
               key={item._id}
-              id={item._id}
               item={item}
               onCheck={checkItem}
               onRemove={removeItem}
