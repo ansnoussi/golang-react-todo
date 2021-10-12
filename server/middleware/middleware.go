@@ -149,13 +149,13 @@ func taskComplete(task string){
 }
 
 func insertOneTask(task models.ToDoList){
-	insertResult, err := collection.InsertOne(context.Background(), task)
-
-	if err!=nil{
-		log.Fatal(err)
+	if task.Task != ""{
+		insertResult, err := collection.InsertOne(context.Background(), task)
+		if err!=nil{
+			log.Fatal(err)
+		}
+		fmt.Println("Inserted a single record", insertResult.InsertedID)
 	}
-
-	fmt.Println("Inserted a single record", insertResult.InsertedID)
 }
 
 func undoTask(task string){
